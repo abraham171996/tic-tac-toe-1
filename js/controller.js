@@ -30,9 +30,9 @@ export default class Controller {
 
   onRestartClick() {
     this.model.reset();
-    this.view.reset(); // Call the reset method to clear the board
+    this.view.reset(); 
     this.view.updateBoard(this.model.board, this.model.isGameOver, this.model.winner);
-    this.model.alertShown = false; // Reset the flag to allow alerts to show again
+    this.model.alertShown = false; 
   }
 
   onGameOver(winner) {

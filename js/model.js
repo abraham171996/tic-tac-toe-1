@@ -4,7 +4,7 @@ export default class Model {
     this.moves = 0;
     this.isGameOver = false;
     this.board = ["none", "none", "none", "none", "none", "none", "none", "none", "none"];
-    this.alertShown = false; // Initialize the flag
+    this.alertShown = false; 
     this.eventListeners = [];
   }
 
