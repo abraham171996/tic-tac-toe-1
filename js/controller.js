@@ -1,55 +1,33 @@
-export default class Controller {
+class Controller{
   constructor(model, view) {
     this.model = model;
     this.view = view;
-    this.model.addEventListener("gameOver", (data) => this.onGameOver(data));
-    this.model.addEventListener("draw", () => this.onDraw());
-    this.model.addEventListener("boardUpdate", (board) => this.onBoardUpdate(board));
-    this.view.addEventListener("cellClick", (data) => this.onCellClick(data));
-    this.view.addEventListener("restartClick", () => this.onRestartClick());
+  }
+  
+  init() {
+    this.view.onHandleCilckSpan(this.onClickSpan.bind(this));
+    this.view.onRestartClick(this.restartGame.bind(this));
+  }
+  restartGame() {
+    const alertElement = document.querySelector(".alert");
+    if (alertElement) {
+      alertElement.parentNode.removeChild(alertElement);
+    }
+
+    this.model.reset();
+    this.view.updateBoard(this.model.board, this.model.isGameOver, this.model.winner);
   }
 
-  onBoardUpdate(board) {
-    this.view.updateBoard(board, this.model.isGameOver, this.model.winner);
-  }
+  
 
-  onCellClick(index) {
-    if (!this.model.isGameOver) {
+  onClickSpan(event) {
+    const spanElement = event.target;
+    const index = Array.from(this.view.spanElements).indexOf(spanElement);
+
+    if (index !== -1) {
       this.model.play(index);
       this.view.updateBoard(this.model.board, this.model.isGameOver, this.model.winner);
-  
-      if (this.model.isGameOver) {
-        if (this.model.winner) {
-          this.view.showAlert(`Player ${this.model.winner.toUpperCase()} wins!`);
-        } else {
-          this.view.showAlert("It's a draw!");
-        }
-      }
-    }
-  }
-
-  onRestartClick() {
-    this.model.reset();
-    this.view.reset(); 
-    this.view.updateBoard(this.model.board, this.model.isGameOver, this.model.winner);
-    this.model.alertShown = false; 
-  }
-
-  onGameOver(winner) {
-    if (!this.model.alertShown) {
-      this.view.showAlert(`Player ${winner.toUpperCase()} wins!`);
-      this.model.alertShown = true;
-    }
-  }
-
-  onDraw() {
-    if (!this.model.alertShown) {
-      this.view.showAlert("It's a draw!");
-      this.model.alertShown = true;
     }
   }
 }
-
-
-
-
+export default Controller

@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Tic-Tac-Toe</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Tic-Tac-Toe</h1>
     <div id="container">
-        <div class="block">
-            <div id="box1" class="box top left">
-                <span data-player="none" >&nbsp;</span>
-            </div>
-            <div id="box2" class="box top">
-                <span data-player="none" >&nbsp;</span>
-            </div>
-            <div id="box3" class="box top right">
-                <span data-player="none" >&nbsp;</span>
-            </div>
+      <div class="block">
+        <div id="box1" class="box top left">
+          <span data-player="none">&nbsp;</span>
         </div>
-        <div class="block">
-            <div id="box4" class="box left">
-                <span data-player="none" >&nbsp;</span>
-            </div>
-            <div id="box5" class="box">
-                <span data-player="none" >&nbsp;</span>
-            </div>
-            <div id="box6" class="box right">
-                <span data-player="none" >&nbsp;</span>
-            </div>
+        <div id="box2" class="box top">
+          <span data-player="none">&nbsp;</span>
         </div>
-        <div class="block">
-            <div id="box7" class="box bottom left">
-                <span data-player="none" >&nbsp;</span>
-            </div>
-            <div id="box8" class="box bottom">
-                <span data-player="none" >&nbsp;</span>
-            </div>
-            <div id="box9" class="box bottom right">
-                <span data-player="none" >&nbsp;</span>
-            </div>
+        <div id="box3" class="box top right">
+          <span data-player="none">&nbsp;</span>
         </div>
+      </div>
+      <div class="block">
+        <div id="box4" class="box left">
+          <span data-player="none">&nbsp;</span>
+        </div>
+        <div id="box5" class="box">
+          <span data-player="none">&nbsp;</span>
+        </div>
+        <div id="box6" class="box right">
+          <span data-player="none">&nbsp;</span>
+        </div>
+      </div>
+      <div class="block">
+        <div id="box7" class="box bottom left">
+          <span data-player="none">&nbsp;</span>
+        </div>
+        <div id="box8" class="box bottom">
+          <span data-player="none">&nbsp;</span>
+        </div>
+        <div id="box9" class="box bottom right">
+          <span data-player="none">&nbsp;</span>
+        </div>
+      </div>
+      
     </div>
-
+    <button class="restart-btn" >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="currentColor"
+          class="bi bi-arrow-repeat"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
+          />
+        </svg>
+      </button>
     <script type="module" src="js/index.js"></script>
-</body>
-
+  </body>
 </html>
